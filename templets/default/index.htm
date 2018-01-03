@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>{dede:global.cfg_webname/}</title>
+<link href="/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/css/lib.css" rel="stylesheet" type="text/css" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/lang/cn.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/checkform.js"></script>
+<script type="text/javascript" src="/js/jquery-min.js"></script>
+<script type="text/javascript" src="/js/fn.js"></script>
+<!--[if lte IE 7]>
+<script type="text/javascript">
+window.location.href = 'http://windows.microsoft.com/zh-cn/windows/upgrade-your-browser';
+</script>
+<![endif]-->
+<style type="text/css">
+html{height:100%; overflow:hidden;}
+#footer{position:fixed; bottom:0; z-index:11;}
+</style>
+<script type="text/javascript">
+window.onmousewheel = function (){
+	return false;
+}
+</script>
+</head>
+<body>
+<div id="home_bg">
+  <div class="img" style="display:block"><img src="/images/banner/1.jpg" width="1920" height="977" /></div>
+  <div class="img" style="display:none"><img src="/images/banner/2.jpg" width="1920" height="977" /></div>
+  <div class="img" style="display:none"><img src="/images/banner/3.jpg" width="1920" height="977" /></div>
+</div>
+<div id="home_main">
+  <div id="home_head" class="clearfix">
+    <div class="logo fl"></div>
+    <div class="top_link fr"> <a href="#"><img src="/images/wb_icon.png" /></a> <a href="#"><img src="/images/wc_icon.png" /></a> <img src="/images/phone_icon.png" /><span>400-000-0000</span> </div>
+    <div class="nav fl">
+	  {dede:channel row="10" type="top" col="1"}
+	  <div class="i fl"><a href="[field:typeurl/]" class="">[field:typename/]</a></div>
+	  {/dede:channel}
+    </div>
+  </div>
+</div>
+<div id="bg_btn">
+  <div class="home_bg_btn wrap"> <span class="on"></span> <span class=""></span> <span class=""></span> </div>
+</div>
+<script type="text/javascript">
+jQuery('#home_bg').ad({
+	img:'.img',
+	btn:'#bg_btn .home_bg_btn span',
+	imgMethod:'.img',
+	sum:3});
+
+
+</script>
+<!--footer-->
+<div id="footer">
+  <div class="wrap">
+    <div class="fl">{dede:global.cfg_banquan/}</div>
+    <div class="fr">保留一切权利。<a href="//zhanoo.com" target="_blank">技术支持:站窝窝</a> <a href="http://www.miitbeian.gov.cn/" target="_blank">{dede:global.cfg_beian/}</a>
+      站长统计代码
+    </div>
+  </div>
+</div>
+<div id="tel" >
+  <div> <img src="/images/tel_img.png" usemap="#Map" border="0" />
+    <map name="Map" id="Map">
+      <area shape="rect" coords="60,-1,88,27" href="javascript://" onclick="jQuery('#tel').hide();jQuery('#tel_show').show();jQuery.get('/setSession.php', {act:1})" />
+    </map>
+    <!--<div class="cls1" onclick="jQuery('#tel').hide();jQuery('#tel_show').show();jQuery.get('/setSession.php', {act:1})"><img src="/images/right_cls2.png" /></div>-->
+  </div>
+</div>
+<div id="tel_show"  onclick="jQuery('#tel_show').hide();jQuery('#tel').show();">电<br />
+  话<br />
+  咨<br />
+  询</div>
+<!--footer end-->
+</body>
+</html>

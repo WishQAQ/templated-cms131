@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>{dede:field.title/}-{dede:global.cfg_webname/}</title>
+<link href="/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/css/lib.css" rel="stylesheet" type="text/css" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/lang/en.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/checkform.js"></script>
+</head>
+<body>
+<!--header-->
+<!--[if lte IE 7]>
+<script type="text/javascript">
+window.location.href = 'http://windows.microsoft.com/zh-cn/windows/upgrade-your-browser';
+</script>
+<![endif]-->
+<script type="text/javascript" src="/js/jquery-min.js"></script>
+<script type="text/javascript" src="/js/fn.js"></script>
+{dede:include filename="head.htm"/}
+<!--header end-->
+<div style="width:100%; background:url(/images/about_us.png) no-repeat center bottom; padding-bottom:50px;">
+  <div class="wrap">
+    <div class="fl leftbar">
+      <div class="leftbar_title">
+        {dede:type typeid='8'}
+<div class="cn">[field:typename /]</div>
+      {/dede:type}
+        <div class="en">Peixun</div>
+      </div>
+      <div class="leftbar_menu">
+        {dede:channel row='10' type='son' col='1' currentstyle="<div class='item'><a href='~typelink~' class='on'>~typename~</a></div>" }
+	  <div class="item"><a href="[field:typeurl/]">[field:typename/]</a></div>
+	   {/dede:channel}
+      </div>
+    </div>
+  <!-- end of .leftbar -->
+  <div class="fr rightbar">
+    <div class="content"> <img src="/images/apply_pic.jpg">
+      <div class="join_form apply_fix">
+        <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="diyid" value="1" />
+<input type="hidden" name="do" value="2" />
+
+          <div class="row clearfix">
+            <div class="fl l">姓名</div>
+            <div class="fr r">
+              <input type="text" name="xingming" class="te" check="请正确填写姓名！~*">
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="fl l">电子邮箱</div>
+            <div class="fr r">
+              <input type="text" name="dzyx" class="te" check="请正确填写电子邮箱！~*">
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="fl l">电话</div>
+            <div class="fr r">
+              <input type="text" name="dianhua" class="te" check="请正确填写电话！~*">
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="fl l">地址</div>
+            <div class="fr r">
+              <input type="text" name="dizhi" class="te" check="请正确填写地址！~*">
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="fl l">&nbsp;</div>
+            <input type="hidden" name="dede_fields" value="xingming,text;dzyx,text;dianhua,text;dizhi,text" />
+<input type="hidden" name="dede_fieldshash" value="93def003d7e8ddba24fa75cb56495d1b" />
+			<div class="fr r">
+              <input type="submit" value="提交" name="" class="sub">
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- .join_form end -->
+    </div>
+    <!-- end of .content -->
+  </div>
+  <!-- end of .rightbar -->
+</div>
+<!-- end of .wrap -->
+<script type="text/javascript">
+jQuery('.member_info_list .item').hover(function (){
+	jQuery(this).addClass('cur');
+}, function (){
+	jQuery(this).removeClass('cur');
+});
+</script>
+<!--footer-->
+{dede:include filename="footer.htm"/}
+<!--footer end-->
+</body>
+</html>

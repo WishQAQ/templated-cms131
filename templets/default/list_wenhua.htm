@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>{dede:field.title/}-{dede:global.cfg_webname/}</title>
+<link href="/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/css/lib.css" rel="stylesheet" type="text/css" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/lang/en.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/checkform.js"></script>
+<script type="text/javascript" src="/js/jquery-min.js"></script>
+</head>
+<body>
+<!--header-->
+<!--[if lte IE 7]>
+<script type="text/javascript">
+window.location.href = 'http://windows.microsoft.com/zh-cn/windows/upgrade-your-browser';
+</script>
+<![endif]-->
+<script type="text/javascript" src="/js/jquery-min.js"></script>
+<script type="text/javascript" src="/js/fn.js"></script>
+{dede:include filename="head.htm"/}
+<!--header end-->
+<div class="wrap">
+	<div class="fl leftbar">
+    	<div class="leftbar_title">
+    {dede:type typeid='9'}
+<div class="cn">[field:typename /]</div>
+      {/dede:type}
+    <div class="en">Wen hua</div>
+</div>
+<div class="leftbar_menu">
+    {dede:channel row='10' type='son' col='1' currentstyle="<div class='item'><a href='~typelink~' class='on'>~typename~</a></div>" }
+	  <div class="item"><a href="[field:typeurl/]">[field:typename/]</a></div>
+	   {/dede:channel}
+</div>    </div><!-- end of .leftbar -->
+    <div class="fr rightbar">
+    	<div class="content">
+        	<div class="about_us">
+            	{dede:list pagesize="9" infolen="150"}
+								<div class="item fl ">
+                	<div class="img">
+                    	<a href="[field:arcurl/]"><img src="[field:picname/]" /><img src="[field:picname/]" style="display:none;" /></a>
+                        <div class="hover"><a href="[field:arcurl/]">[field:title/]</a></div>
+                    </div>
+                    <div class="name"><a href="[field:arcurl/]">[field:title/]</a></div>
+                </div>
+				{/dede:list}
+                            	
+                            </div>
+							<div class="blank6"></div>
+          <div id="turn_page">{dede:pagelist istitem="pre,next," listsize="5"/}</div>
+        </div>
+    </div><!-- end of .rightbar -->
+</div><!-- end of .wrap -->
+
+<!--footer-->
+<div id="footer">
+    <div class="wrap">
+        <div class="fl">版权所有 © 舒意咖啡 2011-2014。1</div>
+        <div class="fr">保留一切权利。<a href="http://szlianya.net/" target="_blank">技术支持:深圳联雅</a> <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备14084608号</a>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253747406'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1253747406%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></div>
+    </div>
+</div>
+ 
+
+<div id="tel" style="display:none;">
+	<div>
+    	<img src="../images/tel_img.png" usemap="#Map" border="0" />
+        <map name="Map" id="Map">
+          <area shape="rect" coords="60,-1,88,27" href="javascript://" onclick="jQuery('#tel').hide();jQuery('#tel_show').show();jQuery.get('/setSession.php', {act:1})" />
+        </map>
+        <!--<div class="cls1" onclick="jQuery('#tel').hide();jQuery('#tel_show').show();jQuery.get('/setSession.php', {act:1})"><img src="/images/right_cls2.png" /></div>-->
+    </div>
+</div>
+<div id="tel_show" style="display:block;" onclick="jQuery('#tel_show').hide();jQuery('#tel').show();">电<br />话<br />咨<br />询</div>    <!--footer end-->
+
+<div id="wrap">
+	<div class="center_box">
+    	<div class="cls_art" onclick="jQuery('#wrap').hide();"><img src="/images/cls_ico.png" /></div>
+		<div class="content">
+        	<div></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+jQuery(function(){
+	var list = jQuery(".img");
+	var name = jQuery(".name");
+	
+	list.click(function(){
+		var AId = jQuery(this).attr("AId");
+		
+		jQuery.post(
+			"/inc/get_art_cont.php",
+			{
+				AId :	AId	
+			},
+			function(data){
+				jQuery("#wrap").find(".content div").html(data);
+				jQuery("#wrap").show();
+			}
+		)
+	})	
+	
+	name.click(function(){
+		var AId = jQuery(this).attr("AId");
+		
+		jQuery.post(
+			"/inc/get_art_cont.php",
+			{
+				AId :	AId	
+			},
+			function(data){
+				jQuery("#wrap").find(".content div").html(data);
+				jQuery("#wrap").show();
+			}
+		)
+	})	
+})
+</script>

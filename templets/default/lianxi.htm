@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>{dede:field.title/}-{dede:global.cfg_webname/}</title>
+<link href="/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/css/lib.css" rel="stylesheet" type="text/css" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/lang/cn.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/checkform.js"></script>
+<script type="text/javascript" src="/js/jquery-min.js"></script>
+</head>
+<body>
+<!--header-->
+<!--[if lte IE 7]>
+<script type="text/javascript">
+window.location.href = 'http://windows.microsoft.com/zh-cn/windows/upgrade-your-browser';
+</script>
+<![endif]-->
+<script type="text/javascript" src="/js/jquery-min.js"></script>
+<script type="text/javascript" src="/js/fn.js"></script>
+{dede:include filename="head.htm"/}
+<!--header end-->
+<div class="wrap">
+  <div class="contact_img"><img src="/images/contact_us.jpg" /></div>
+  <div class="contact_l fl">
+    <div class="join_form">
+     <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="diyid" value="2" />
+<input type="hidden" name="do" value="2" />
+
+        <div class="hd">请留下您的联系方式，我们会尽快与您联系</div>
+        <div class="row clearfix">
+          <div class="fl l">姓名</div>
+          <div class="fr r">
+            <input type="text" name="name" class="te" check="请正确填写姓名！~*" />
+          </div>
+        </div>
+        <div class="row clearfix">
+          <div class="fl l">地址</div>
+          <div class="fr r">
+            <input type="text" name="add" class="te" check="请正确填写地址！~*" />
+          </div>
+        </div>
+        <div class="row clearfix">
+          <div class="fl l">电话</div>
+          <div class="fr r">
+            <input type="text" name="tell" class="te" check="请正确填写电话！~*" />
+          </div>
+        </div>
+        <div class="row clearfix">
+          <div class="fl l">电子邮箱</div>
+          <div class="fr r">
+            <input type="text" name="emial" class="te" check="请正确填写邮箱地址！~email|“{value}”不是一个有效的邮箱地址！*" />
+          </div>
+        </div>
+        <div class="row clearfix">
+          <div class="fl l">留言</div>
+          <div class="fr r">
+            <textarea name="liuyan" class="tt" check="请正确填写内容！~*"></textarea>
+          </div>
+        </div>
+        <div class="row clearfix">
+          <div class="fl l">&nbsp;</div>
+          <input type="hidden" name="dede_fields" value="name,text;add,text;tell,text;emial,text;liuyan,multitext" />
+<input type="hidden" name="dede_fieldshash" value="2077a5e47cb31df4fb072bf9179cb6ac" />
+		  <div class="fr r">
+            <input type="submit" value="提交" name="" class="sub" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- .join_form end -->
+  </div>
+  <div class="contact_r fr">
+    <div><span style="font-size:16px;"><span style="font-family:微软雅黑;">地址：广州市天河区迎龙路161号</span></span><br />
+      <hr />
+      <p> 电话：400-000-0000<br />
+        <br />
+        邮箱：admin@xunmoban.com<br />
+        <img alt="" src="/images/4379d7e3da.jpg" style="width: 300px; height: 300px;" /><br />
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="color:#800000;">手机扫二维码
+        关注微信动态</span></p>
+    </div>
+  </div>
+  <div class="blank12"></div>
+</div>
+<!-- end of .wrap -->
+<!--footer-->
+{dede:include filename="footer.htm"/}
+<!--footer end-->
+</body>
+</html>

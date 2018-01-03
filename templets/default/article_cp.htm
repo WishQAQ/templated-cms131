@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content = "IE=edge,chrome=1" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>{dede:field.title/}-{dede:global.cfg_webname/}</title>
+<link href="/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/css/lib.css" rel="stylesheet" type="text/css" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/lang/en.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/checkform.js"></script>
+</head>
+<body>
+<!--header-->
+<!--[if lte IE 7]>
+<script type="text/javascript">
+window.location.href = 'http://windows.microsoft.com/zh-cn/windows/upgrade-your-browser';
+</script>
+<![endif]-->
+<script type="text/javascript" src="/js/jquery-min.js"></script>
+<script type="text/javascript" src="/js/fn.js"></script>
+{dede:include filename="head.htm"/}
+<!--header end-->
+<div class="pdetail_w">
+  <div class="wrap">
+    <div class="pdmain">
+      <h1 class="pdetail_h clearfix">
+        <div class="cn">{dede:field.title/}</div>
+      </h1>
+      <!-- end of .pdetail_desc -->
+      <div class="list_tab clearfix">
+        <div class="fl btn">&lt;</div>
+        <div class="fl sc">
+          <div class="list clearfix">
+            
+			{dede:productimagelist}
+			<div class="item fl PicPath [field:global name=autoindex runphp='yes']@me=(@me==0)?'cur':'';[/field:global]"><img src="[field:imgsrc/]" width="180" height="103" /><span></span>
+              <div class="dg"></div>
+              <div class="mask">[field:alttext/]</div>
+            </div>
+			{/dede:productimagelist}
+        
+          </div>
+        </div>
+        <div class="fr btn">&gt;</div>
+      </div>
+	  
+      <div class="bigimg">
+        {dede:productimagelist}
+		<div class="item" style="[field:global name=autoindex runphp='yes']@me=(@me==0)?' display:block; ':' display:none; ';[/field:global]"> <img src="[field:imgsrc/]" width="875" />
+        </div>
+        {/dede:productimagelist}
+      </div>
+	  
+	  <div class="pdetail_desc"> <br />
+{dede:field.body/}
+      </div>
+	  
+      <div class="blank20"></div>
+    </div>
+    <!-- end of .pdmain -->
+  </div>
+  <!-- end of .wrap -->
+</div>
+<!-- end of .pdetail_w -->
+<script type="text/javascript">
+(function ($){
+	var list = $('.pdmain .list_tab .sc .list');
+	var child = $('.item');
+	var lbtn = $('.pdmain .list_tab > .btn').eq(0);
+	var rbtn = $('.pdmain .list_tab > .btn').eq(1);
+	var child_w = child.outerWidth(true);
+	var pro_sum = 7;
+	var bigimg_child = $('.bigimg .item');
+	var i=0;
+	child.on('click', function (){
+		child.removeClass('cur');
+		$(this).addClass('cur');
+		bigimg_child.eq(child.index(this)).show(0).siblings().hide(0);
+	});
+		lbtn.on('click', function (){
+		i--;
+		if (i<=0){i=0;}
+		list.stop(true,true).animate({'margin-left':-i*child_w}, 200);
+	});
+	rbtn.on('click', function (){
+		i++;
+		if (i>pro_sum-4){i=pro_sum-4;}
+		list.stop(true,true).animate({'margin-left':-i*child_w}, 200);
+	});
+	})(jQuery);
+</script>
+<!--footer-->
+{dede:include filename="footer.htm"/}
+<!--footer end-->
+</body>
+</html>

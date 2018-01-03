@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0047)http://www.shuyicoffee.com/student.php?CateId=4 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>{dede:field.title/}-{dede:global.cfg_webname/}</title>
+<link href="/css/global.css" rel="stylesheet" type="text/css">
+<link href="/css/lib.css" rel="stylesheet" type="text/css">
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/en.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/checkform.js"></script>
+</head>
+<body>
+<!--header-->
+<!--[if lte IE 7]>
+<script type="text/javascript">
+window.location.href = 'http://windows.microsoft.com/zh-cn/windows/upgrade-your-browser';
+</script>
+<![endif]-->
+<script type="text/javascript" src="/js/jquery-min.js"></script>
+<script type="text/javascript" src="/js/fn.js"></script>
+{dede:include filename="head.htm"/}
+<!--header end-->
+<div class="wrap">
+  <div class="fl leftbar">
+    <div class="leftbar_title">
+      {dede:type typeid='7'}
+<div class="cn">[field:typename /]</div>
+      {/dede:type}
+      <div class="en">Coffee training</div>
+    </div>
+    <div class="leftbar_menu">
+	   {dede:channel row='10' type='son' col='1' currentstyle="<div class='item'><a href='~typelink~' class='on'>~typename~</a></div>" }
+	  <div class="item"><a href="[field:typeurl/]">[field:typename/]</a></div>
+	   {/dede:channel}
+    </div>
+  </div>
+  <!-- end of .leftbar -->
+  <div class="fr rightbar">
+    <div class="content">
+      <div class="std_cate" id="std1">
+        <div class="std_h">
+          <div class="txt">
+            <p> 最好最美味的产品提供给你体验！</p>
+          </div>
+        </div>
+ 
+        <!-- end of .std_year -->
+        <div class="std_dd" style="display: block">
+          <div class="std_list clearfix">
+            {dede:list pagesize="12"}
+			<div class="item fl PicPath "><a href="[field:arcurl/]" title="[field:title/]"  alt="[field:title/]" target="_blank"><img src="[field:picname/]" width="185" height="121"></a><span></span></div>
+			{/dede:list}
+          </div>
+          <div class="blank6"></div>
+          <div id="turn_page">{dede:pagelist istitem="pre,next," listsize="5"/}</div>
+        </div>
+        
+        <!-- end of .std_year -->
+        <div class="std_dd" style="display: block">
+          <div class="blank6"></div>
+        </div>
+        <!-- end of .std_dd -->
+      </div>
+      <!-- end of .std_cate -->
+    </div>
+    <!-- end of .content -->
+  </div>
+  <!-- end of .rightbar -->
+</div>
+<!-- end of .wrap -->
+<script type="text/javascript">
+jQuery('.member_info_list .item').hover(function (){
+	jQuery(this).addClass('cur');
+}, function (){
+	jQuery(this).removeClass('cur');
+});
+</script>
+<!--footer-->
+{dede:include filename="footer.htm"/}
+<!--footer end-->
+</body>
+</html>
